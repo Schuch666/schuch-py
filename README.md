@@ -1,2 +1,2 @@
 # schuch-py
-python scripts
+python evaluation code
