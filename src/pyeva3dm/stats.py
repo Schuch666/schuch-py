@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 def calculate_stats(model, obs, min=None, max=None, digit = 6):
     """
     Calculate model performance statistics.
