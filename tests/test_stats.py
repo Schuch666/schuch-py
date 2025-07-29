@@ -1,4 +1,4 @@
-from pyeva3dm.stats import calculate_stats
+from eva3dm.stats import stat
 
 import numpy as np
 import pandas as pd
@@ -17,5 +17,5 @@ obs = np.array([
     90.007956, 92.577636, 93.043887, 94.169317, 95.125546, 96.751642, 97.558368, 98.774788, 98.928785, 100.025309
 ])
 
-results = calculate_stats(model, obs)
+results = stat(model, obs)
 print(results)
