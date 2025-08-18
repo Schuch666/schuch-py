@@ -35,10 +35,12 @@ def stat(model, obs, min=None, max=None, digit = 6):
     n = len(o)                                       # Number of pairs
     obs_mean = np.mean(o)                            # Obs average
     sim_mean = np.mean(m)                            # model average
-    r = np.nan if np.std(m) == 0 or np.std(o) == 0 else np.corrcoef(m, o)[0, 1]     # Pearson correlation
+                                                     # Pearson correlation
+    r = np.nan if np.std(m) == 0 or np.std(o) == 0 else np.corrcoef(m, o)[0, 1]     
                                                      # Index of Agreement (Willmott 1981)
     ioa = 1 - (np.sum((m - o)**2) / np.sum((np.abs(m - obs_mean) + np.abs(o - obs_mean))**2))
-    fa2 = np.mean(((m[o != 0] / o[o != 0]) < 2) & ((m[o != 0] / o[o != 0]) > 0.5))  # Factor of 2
+                                                     # Factor of 2
+    fa2 = np.mean(((m[o != 0] / o[o != 0]) < 2) & ((m[o != 0] / o[o != 0]) > 0.5)) 
     rmse = np.sqrt(np.mean((m - o)**2))              # RMSE
     mb = np.mean(m - o)                              # Mean Bias
     me = np.mean(np.abs(m - o))                      # Mean Error (Mean Absolute Error)
